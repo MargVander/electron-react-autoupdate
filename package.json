@@ -2,19 +2,33 @@
   "name": "hello-world2",
   "version": "0.1.0",
   "private": true,
+  "author": "Margo Vdbk",
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "electron-is-dev": "^1.1.0",
+    "electron-updater": "^4.2.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.4.0"
+  },
+  "main": "public/electron.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/MargVander/electron-react-autoupdate.git"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "prod": "build --em.main=build/electron.js",
+    "release": "build --em.main=build/electron.js --publish=always",
+    "preprod": "npm run build",
+    "prerelease": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,5 +44,21 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "electron": "^8.0.1",
+    "electron-builder": "^22.3.2",
+    "wait-on": "^4.0.0"
+  },
+  "build": {
+    "appId": "com.example.electron-cra",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   }
 }
