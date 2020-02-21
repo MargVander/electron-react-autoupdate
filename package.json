@@ -1,6 +1,6 @@
 {
   "name": "hello-world2",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "author": "Margo Vdbk",
   "homepage": "./",
@@ -26,8 +26,8 @@
     "eject": "react-scripts eject",
     "dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-build": "electron-builder",
-    "release": "yarn react-build && electron-builder --publish=always",
-    "build": "yarn react-build && yarn electron-build"
+    "release": "yarn react-build && electron-builder --mac --win --publish=always",
+    "build": "yarn react-build && yarn electron-build --mac --win"
   },
   "eslintConfig": {
     "extends": "react-app"

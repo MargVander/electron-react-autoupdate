@@ -29,7 +29,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run release`
 
-Builds the app for production to the `build` folder and release it on Github<br />
+Builds the app for production to the `build` folder and release it on Github. Don't forget to change version number on package.json.<br />
 
 ### `npm run eject`
 
