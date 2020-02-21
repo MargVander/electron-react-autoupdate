@@ -8,7 +8,7 @@ function App() {
         <p>
           Hello world !
         </p>
-        <p>Test autoupdate 2</p>
+        <p>Test autoupdate 3 !</p>
       </header>
     </div>
   );
