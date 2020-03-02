@@ -8,7 +8,7 @@ function App() {
         <p>
           Hello world !
         </p>
-        <p>v 0.1.7</p>
+        <p>v 0.1.8</p>
       </header>
     </div>
   );
